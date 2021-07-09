@@ -1,0 +1,217 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  // name your instance!
+  "title": "UraniumX | Explorer",
+
+  "address": "https://explorer.uraniumx.org",
+
+  "forcessl": false,
+
+  // coin name
+  "coin": "UraniumX",
+
+  // coin symbol
+  "symbol": "URX",
+
+  // logo
+  "logo": "/images/logo.png",
+  // Optional header logo - change false to e.g. "/images/headerlogo.png"
+  "headerlogo": false,
+
+  // favicon
+  "favicon": "public/images/logo.png",
+
+  // Uses bootswatch themes (http://bootswatch.com/)
+  // Valid options:
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Litera, Lumen, 
+  //     Lux, Materia, Minty, Pulse, Sandstone, Simplex, Sketchy, Slate, 
+  //     Solar, Spacelab, Superhero, United, Yeti
+  // theme (see /public/themes for available themes)
+  "theme": "Neos",
+
+  // port to listen for requests on.
+  "port" : 3001,
+  "sslport" : 8443,
+
+  // database settings (MongoDB)
+  "dbsettings": {
+    "user": "dbuser",
+    "password": "dbpassword",
+    "database": "explorerdb",
+    "address": "localhost",
+    "port": 27017
+  },
+
+  //update script settings
+  "update_timeout": 10,
+  "check_timeout": 250,
+  "block_parallel_tasks": 1,
+
+  // wallet settings
+  "use_rpc": false,
+
+  "wallet": {
+    "host": "localhost",
+    "port": 8234,
+    "username": "rpcuser",
+    "password": "rpcpassword"
+  },
+
+  // confirmations
+  "confirmations": 20,
+
+  // language settings
+  "locale": "locale/en.json",
+
+  // menu settings
+  "display": {
+    "api": true,
+    "markets": true,
+    "richlist": true,
+    "search": true,
+    "movement": true,
+    "network": true,
+    "masternodes": false,
+    // Settings to switch navbar theme, leaving both false will use the 'primary' navbar
+    "navbar_dark": true,
+    "navbar_light": false,
+    // Socials
+    "twitter": false,
+    "facebook": true,
+    "youtube": false,
+    "telegram": true,
+    "discord": true,
+    "bitcointalk": true,
+    "github": true,
+    "website": true,
+  },
+
+  // index page (valid options for difficulty are POW, POS or Hybrid)
+  "index": {
+    "show_hashrate": true,
+    // Show Market Cap in header
+    "show_market_cap": false,
+    // Replacing the pricebox. This can be Market Cap or Masternodes, do not set both!
+    // Show Market Cap in place of price box
+    "show_market_cap_over_price": false,
+    // Show Masternodes in place of price box
+    "show_masternodes": false,
+    "difficulty": "POW",
+    "last_txs": 100,
+    "txs_per_page": 10
+  },
+
+  // ensure links on API page are valid
+  "api": {
+    "blockindex": 1,
+    "blockhash": "43245b37c38fff12f196e061fcef3faab504c8a6ee72bcfede9919d9d8c58cd1",
+    "txhash": "83624836e62b6c2c4c2adffd0e8462e2018e2373ce323db26a03090c29c22028",
+    "address": "UaFdeD1MtxBH2kvrqdNoNLddxCh9YPFgf3"
+  },
+
+  // market settings
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, ccex
+  //default market is loaded by default and determines last price in header
+  "markets": {
+    "coin": "URX",
+    "exchange": "BTC",
+    "enabled": ["bittrex"],
+    "ccex_key" : "Get-Your-Own-Key",
+    "default": "bittrex"
+  },
+
+  // richlist/top100 settings
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+  // movement page settings
+  // min amount: show transactions greater than this value
+  // low flag: greater than this value flagged yellow
+  // high flag: greater than this value flagged red
+  "movement": {
+    "min_amount": 0.01,
+    "low_flag": 1,
+    "high_flag": 500
+  },
+
+  // Masternodes page
+  "masternodes": {
+    "default_port": 26914,
+    // Masternode cli command default is 'masternode'. Set the alternate cli command for your node.
+    // cli command: ./examplecoin-cli examplecoinnode count
+    // setting: examplecoinnode
+    "cli": "masternode",
+
+    // Use index-based values (starting with 0).
+    // 0 is the key of the masterlist data.
+    // -1 means that the info is not available.
+    "list_format": {
+      "address": 3,
+      "status": 1,
+      "protocol": 2,
+      "lastseen": 4,
+      "lastpaid": 6,
+      "ip": 0
+    }
+  },
+
+  // Socials
+  "twitter": "RealCoin_REA",
+  "facebook": "URXBTC",
+  "youtube": "UCIK_A7x80acThhcbWnqpXMg",
+  "telegram": "uraniumxgroup",
+  "discord": "7zkKtff",
+  "bitcointalk": "5159088",
+  "github": "UraniumX-URX",
+  "website": "https://urx.zone/",
+
+  //genesis
+  "genesis_tx": "a12b04a5138e9241d194dc72a5811e6c4468585d450e2548d71294444855d985",
+  "genesis_block": "6be1ade2619d1402571996e436b726c8b0bd72f10fdcae10cff5acd369118626",
+
+  //heavy (enable/disable additional heavy features)
+  "heavy": false,
+
+  //disable saving blocks & TXs via API during indexing.
+  "lock_during_index": false,
+
+  //amount of txs to index per address (stores latest n txs)
+  "txcount": 100,
+  "txcount_per_page": 50,
+
+  //show total sent & received on address page (set false if PoS)
+  "show_sent_received": true,
+
+  // how to calculate current coin supply
+  // COINBASE : total sent from coinbase (PoW)
+  // GETINFO : retreive from getinfo api call (PoS)
+  // HEAVY: retreive from heavys getsupply api call
+  // BALANCES : total of all address balances
+  // TXOUTSET : retreive from gettxoutsetinfo api call
+  "supply": "TXOUTSET",
+
+  // how to acquire network hashrate
+  // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  "nethash": "getnetworkhashps",
+
+  // nethash unitd: sets nethash API return units
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  "nethash_units": "K",
+
+  // Address labels
+  // example : "JhbrvAmM7kNpwA6wD5KoAsbtikLWWMNPcM": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
+  // label (required) = test to display
+  // type (optional) = class of label, valid types: default, primary, warning, danger, success
+  // url (optional) = url to link to for more information
+  "labels": {
+  //  "JSoEdU717hvz8KQVq2HfcqV9A79Wihzusu": {"label": "Developers address", "type":"primary", "url":"http://example.com"},
+  //  "JSWVXHWeYNknPdG9uDrcBoZHztKMFCsndw": {"label": "Cryptsy"}
+  }
+}
